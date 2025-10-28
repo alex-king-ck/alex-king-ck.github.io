@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demo</title>
+    <style>
+      :root {
+        --bg: #e9eef0;
+        --panel: #ffffff;
+        --muted: #e9eef0;
+        --text: #111827;
+        --primary: #002356;
+        --primary-contrast: #ffffff;
+        --secondary: #008600;
+        --secondary-contrast: #ffffff;
+      }
+
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        background: linear-gradient(180deg, #f8fafc, #e9eef0);
+        color: var(--text);
+      }
+
+      .container {
+        min-height: 100%;
+        max-width: 440px;
+        margin: 0 auto;
+        padding: 40px 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .card {
+        width: 100%;
+        background: var(--panel);
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08), 0 6px 6px rgba(0,0,0,0.06);
+      }
+
+      .title {
+        margin: 0 0 16px 0;
+        font-size: 24px;
+      }
+
+      .form { display: grid; gap: 10px; }
+      .label { font-size: 14px; color: var(--muted); }
+      .input {
+        height: 40px;
+        padding: 0 12px;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        font-size: 16px;
+      }
+      .input:focus {
+        outline: none;
+        border-color: #c7d2fe;
+        box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+      }
+      .input-static {
+        display: flex;
+        align-items: center;
+        background: #f9fafb;
+        color: #9ca3af;
+        user-select: none;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        height: 44px;
+        padding: 0 14px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        border: 0;
+        cursor: pointer;
+      }
+      .btn-primary { background: var(--primary); color: var(--primary-contrast); }
+      .btn-secondary { background: var(--secondary); color: var(--secondary-contrast); }
+      .btn-block { display: flex; width: 100%; }
+      .btn-disabled { opacity: .6; cursor: not-allowed; pointer-events: none; }
+
+      .separator {
+        position: relative;
+        text-align: center;
+        color: var(--muted);
+        margin: 16px 0;
+      }
+      .separator::before,
+      .separator::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 40%;
+        height: 1px;
+        background: #e5e7eb;
+      }
+      .separator::before { left: 0; }
+      .separator::after { right: 0; }
+      .demo-banner {
+        background: #eff6ff;
+        color: #2563eb;
+        border: 1px solid #bfdbfe;
+        border-radius: 8px;
+        padding: 8px 10px;
+        font-size: 13px;
+        margin-bottom: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <div class="demo-banner">Demo page</div>
+        <h1 class="title">Demo</h1>
+
+        <div class="form" aria-hidden="true">
+          <label class="label">Test</label>
+          <div class="input input-static">test</div>
+
+          <label class="label">Test</label>
+          <div class="input input-static">••••••••</div>
+
+          <div class="btn btn-primary btn-block btn-disabled" role="button" aria-disabled="true">Test Button</div>
+        </div>
+
+        <div class="separator" role="separator" aria-label="or">or</div>
+
+        <a class="btn btn-secondary btn-block" href="https://creditkarma.com/u/dashboard">Use CK App</a>
+      </section>
+    </main>
+  </body>
+  </html>
